@@ -1,0 +1,286 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+html {
+    max-width: 600px;
+    margin: 0px auto;
+
+}
+
+body {
+    max-width: 600px;
+    margin: 0px auto;
+    position: relative;
+    border: 1px solid black;
+    padding-top: 70px;
+}
+
+/* header */
+
+.cabecalho {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 70px;
+    max-width: 600px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.418);
+}
+
+.logo {
+    height: 70px;
+}
+
+.menu-butoes {
+    position: relative;
+    padding: 5px;
+}
+
+.btn-menu {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-menu span {
+    color: #000;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.btn-menu span:hover {
+    color: #060032;
+    font-weight: 900;
+    font-size: 37px;
+}
+
+/* header */
+
+/* main */
+
+/* apresentção */
+.apresentacao {
+    background: linear-gradient(135deg, #fff, #ff9d4d);
+    height: 100%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.apresentacao div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.apresentacao div h2 {
+    font-size: 1.6rem;
+    color: #000;
+}
+
+.apresentacao p {
+    color: #000;
+    font-size: 0.95rem;
+}
+
+.apresentacao .funcinamento {
+    background-color: #FF9F51;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.418);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.418);
+}
+
+.apresentacao img {
+    width: 170px;
+}
+/* apresentção */
+
+/* sessões */
+
+.sessoes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sessoes a {
+    border-top: 1px solid black;
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    padding: 10px 2px;
+    text-align: center;
+    margin-bottom: 3px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.418);
+}
+
+/* sessões */
+
+/* catalogo */
+.catalogo {
+    min-height: 55vh;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.section h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding: 10px;
+}
+
+.produto {
+    width: 170px;
+    height: 220px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #fff, #FF9F51);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.418);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.brotinho {
+    width: 90%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 0px 20px;
+}
+
+.dados-produto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.produto img {
+    max-width: 150px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.detalhes {
+    position: fixed;
+    z-index: 100;
+    width: 90%;
+    top: 100px;
+    border: 1px solid black;
+    background-color: #fff;
+    padding: 10px;
+    max-width: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: 0.5s;
+}
+
+.detalhes-ocutar {
+    height: 0;
+    opacity: 0;
+    display: none;
+}
+
+.fexar-detalhes {
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.detalhes > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detalhes > div > img {
+    border-radius: 10px;
+}
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    text-align: center;
+    gap: 5px;
+    width: 40%;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dados > a {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.borda {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 40%;
+}
+
+/* catalogo */
+
+/* main */
+
+/* footer */
+
+footer {
+    background-color: #fff;
+    color: #fff;
+    border-top: 1px solid black;
+    box-shadow: 0px -2px 3px #00000065;
+}
+
+.contatos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* footer */

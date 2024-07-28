@@ -1,0 +1,12 @@
+<div class="section" id="bebidas">
+    <h2>bebidas</h2>
+    {% for bebida in bebidas %}
+        <div class="produto">
+            <img src="{{ url_for('static', filename=bebida[3]) }}" alt="{{ bebida[1]}}">
+            <div class="dados-produto">
+                <h3 class="nome-produto">{{ bebida[1] }}</h3>
+                <p>R$ <span class="preco-produto">{{ bebida[2] }}</span> un.</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>

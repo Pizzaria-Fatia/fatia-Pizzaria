@@ -1,0 +1,81 @@
+.produtos-carrinho {
+    min-height: 80vh;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 15px;
+}
+
+.carrinho-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.carrinho-container img {
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.qtd-itens {
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.qtd-itens input {
+    width: 50px;
+    height: 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+
+.remover {
+    padding: 5px;
+    background-color: #e94343;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.finalizar-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid black;
+    padding: 10px;
+}
+
+.dados-finais {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dados-finais label {
+    font-size: 1.1em;
+}
+
+.dados-finais input {
+    width: 100%;
+    height: 30px;
+    font-size: 1.1em;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+
+#finalizar {
+    padding: 5px;
+    background-color: #5ce943;
+    color: #000;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}

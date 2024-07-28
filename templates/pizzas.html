@@ -1,0 +1,26 @@
+<div class="section pizzas" id="pizzas">
+    <h2>pizzas tradicionais</h2>
+    {% for pizza in pizzas %}
+        {% if pizza[4] == 'tradicional' %}
+        <div class="produto">
+            <img src="{{ url_for('static', filename=pizza[3]) }}" alt="{{ pizza[1]}}">
+            <div class="dados-produto">
+                <h3 class="nome-produto">{{ pizza[1] }}</h3>
+                <p>R$ <span class="preco-produto">{{ pizza[2] }}</span> un.</p>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <h2>pizzas doces</h2>
+    {% for pizza in pizzas %}
+        {% if pizza[4] == 'doces' %}
+        <div class="produto">
+            <img src="{{ url_for('static', filename=pizza[3]) }}" alt="{{ pizza[1]}}">
+            <div class="dados-produto">
+                <h3 class="nome-produto">{{ pizza[1] }}</h3>
+                <p>R$ <span class="preco-produto">{{ pizza[2] }}</span> un.</p>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>

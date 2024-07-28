@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilos.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Fatia Pizzaria</title>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQKC0F6HRB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SQKC0F6HRB');
+</script>
+<body>
+    <header>
+        <div class="cabecalho">
+            <a href="#"><img class="logo" src="{{ url_for('static', filename='imagens/fatiaLogo.jpg') }}" alt="Logo"></a>
+            <div class="menu-butoes">
+                <a href="{{ url_for('carrinho') }}" id="butao-carrinho" class="btn-menu"><span class="material-symbols-outlined">shopping_cart</span></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="apresentacao">
+            <div>
+                <h2>BATEU A FOME?</h2>
+                <p>Peça agora a sua pizza!</p>
+                <p class="funcinamento">Das 18:00 as 00:00</p>
+            </div>
+            <img src="{{ url_for('static', filename='imagens/pizzaFatia.png') }}" alt="Prato-Proncipal">
+        </section>
+        <nav class="sessoes">
+            <a class="nav-link" href="{{ url_for('home') }}" data-section="pizzas">PIZZAS</a>
+            <a class="nav-link" href="{{ url_for('brotinho') }}" data-section="brotinho">BROTINHO</a>
+            <a class="nav-link" href="{{ url_for('miniPizzas') }}" data-section="miniPizzas">MINI PIZZA</a>
+            <a class="nav-link" href="{{ url_for('bebidas') }}" data-section="bebidas">BEBIDAS</a>
+        </nav>
+        <section class="catalogo">
+            <div class="section pizzas" id="pizzas">
+                <h2>pizzas tradicionais</h2>
+                {% for pizza in pizzas %}
+                    {% if pizza[4] == 'tradicional' %}
+                    <div class="produto">
+                        <img src="{{ url_for('static', filename=pizza[3]) }}" alt="{{ pizza[1]}}">
+                        <div class="dados-produto">
+                            <h3 class="nome-produto">{{ pizza[1] }}</h3>
+                            <p>R$ <span class="preco-produto">{{ pizza[2] }}</span> un.</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                <h2>pizzas doces</h2>
+                {% for pizza in pizzas %}
+                    {% if pizza[4] == 'doces' %}
+                    <div class="produto">
+                        <img src="{{ url_for('static', filename=pizza[3]) }}" alt="{{ pizza[1]}}">
+                        <div class="dados-produto">
+                            <h3 class="nome-produto">{{ pizza[1] }}</h3>
+                            <p>R$ <span class="preco-produto">{{ pizza[2] }}</span> un.</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contatos">
+            <div>
+                <p>Para Mais Opções Entre em Contato:</p>
+                <a href="https://api.whatsapp.com/send/?phone=5561983707886&text=Ola%21+Vim+atraves+do+site%2C+quero+iniciar++um+pedido%21+&type=phone_number&app_absent=0">(61) 9 8446-4789</a>
+            </div>
+            <div>
+                <p>Sociais:</p>
+                <a href="https://www.instagram.com/pizzafatiaa" target="_blank"><img src="{{ url_for('static', filename='imagens/instagram.png') }}" alt="instagram"></a>
+            </div>
+        </div>
+        <p>site criado por <a href="https://www.instagram.com/fael.bs7" target="_blank">Rafael Brandão</a></p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
