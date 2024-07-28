@@ -3,7 +3,7 @@
     {% for pizza in minipizza %}
         {% if pizza[4] == 'tradicional 15cm' %}
         <div class="produto">
-            <img src="{{ url_for('static', filename='imagens/produtos/minipizza/miniPizzas.jpg') }}" alt="{{ pizza[1]}}">
+            <img src="{{ url_for('static', filename='imagens/produtos/miniPizza/miniPizzas.jpg') }}" alt="{{ pizza[1]}}">
             <div class="dados-produto">
                 <h3 class="nome-produto">{{ pizza[1] }}</h3>
                 <p>R$ <span class="preco-produto">{{ pizza[2] }}</span> un.</p>
@@ -15,7 +15,7 @@
     {% for pizza in minipizza %}
         {% if pizza[4] == 'doces 15cm' %}
         <div class="produto">
-            <img src="{{ url_for('static', filename='imagens/produtos/minipizza/miniPizzasDoce.jpg') }}" alt="{{ pizza[1]}}">
+            <img src="{{ url_for('static', filename='imagens/produtos/miniPizza/miniPizzasDoce.jpg') }}" alt="{{ pizza[1]}}">
             <div class="dados-produto">
                 <h3 class="nome-produto">{{ pizza[1] }}</h3>
                 <p>R$ <span class="preco-produto">{{ pizza[2] }}</span> un.</p>
