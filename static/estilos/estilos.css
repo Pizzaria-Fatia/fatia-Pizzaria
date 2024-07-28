@@ -283,4 +283,9 @@ footer {
     padding: 10px;
 }
 
+footer a {
+    color: blue;
+    text-decoration: underline;
+}
+
 /* footer */
