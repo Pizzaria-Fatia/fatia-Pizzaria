@@ -42,14 +42,20 @@ def carrinho():
 def pizzas():
     " página das mini pizzas "
     pizzas = listaPizzas()
-    return render_template('pizzas.html', pizzas=pizzas)
+    if pizzas == 'Erro':
+        return 'ERRO ao carregar a página'
+    else:
+        return render_template('pizzas.html', pizzas=pizzas)
 
 
 @app.route('/miniPizzas')
 def miniPizzas():
     " página das mini pizzas "
     minipizza = listaMiniPizza()
-    return render_template('miniPizzas.html', minipizza=minipizza)
+    if minipizza == 'Erro':
+        return 'ERRO ao carregar a sessão Mini Pizzas'
+    else:
+        return render_template('miniPizzas.html', minipizza=minipizza)
 
 
 @app.route('/brotinho')
@@ -62,7 +68,10 @@ def brotinho():
 def bebidas():
     " página das mini pizzas "
     bebidas = listaBebidas()
-    return render_template('bebidas.html', bebidas=bebidas)
+    if bebidas == 'Erro':
+        return 'ERRO ao carregar a sessão Bebidas'
+    else:
+        return render_template('bebidas.html', bebidas=bebidas)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
