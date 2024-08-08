@@ -8,6 +8,7 @@ def listaPizzas():
         sql = "select * from pizzas"
         cursor.execute(sql)
         pizzas = cursor.fetchall()
+        cursor.close()
     except:
         pizzas = 'Erro'
     return pizzas
@@ -19,6 +20,7 @@ def listaMiniPizza():
         sql = "select * from miniPizza"
         cursor.execute(sql)
         miniPizza = cursor.fetchall()
+        cursor.close()
     except:
         miniPizza = 'Erro'
     return miniPizza
@@ -30,6 +32,7 @@ def listaBebidas():
         sql = "select * from bebidas"
         cursor.execute(sql)
         bebidas = cursor.fetchall()
+        cursor.close()
     except:
         bebidas = 'Erro'
     return bebidas
