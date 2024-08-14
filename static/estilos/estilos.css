@@ -234,6 +234,7 @@ img.detalhes-img {
     border-radius: 10px;
     border: 1px solid black;
     max-height: 300px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
