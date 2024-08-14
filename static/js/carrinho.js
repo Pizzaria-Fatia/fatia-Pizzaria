@@ -12,9 +12,33 @@ function eventos() {
     clickRemove()
 
     const btn_finalizar = document.getElementById('finalizar')
-    btn_finalizar.addEventListener("click", () => {
-        alert('Ops, Infelizmente estamos fexados!')
+    btn_finalizar.addEventListener("click", finalizarPedido)
+}
+
+function finalizarPedido() {
+    const container = document.getElementsByClassName('dados-produto')
+    let pedido = `Olá, tenho um pedido \n \n`
+    for (var i = 0; i < container.length; i++) {
+        const nome = container[i].getElementsByClassName('nome-produto-carrinho')[0].innerText
+        const borda = container[i].getElementsByClassName('borda-produto-carrinho')[0].innerText
+        const qtd = container[i].getElementsByClassName('qtd')[0].value
+        let mensagem = `${qtd}x ${nome} ${borda} \n\n`
+        pedido = pedido + mensagem
+    }
+    pedido = pedido + `Obrigado!`
+    const pedidoCod = encodeURIComponent(pedido)
+    console.log(pedido)
+    fetch('/limparCarrinho', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
+    .then(response => {
+        response.text()
+        window.location.href = `https://wa.me/5561983707886/?text=${pedidoCod}`
+    })
+    .catch(error => console.error('Error:', error))
 }
 
 function clickRemove() {

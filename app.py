@@ -12,6 +12,12 @@ def home():
     return render_template('index.html', pizzas=pizzas)
 
 
+@app.route('/limparCarrinho', methods=['POST'])
+def limparCarrinho():
+    session.pop('carrinho')
+    return jsonify({'status': 'ok', 'mensagem': 'limpou o carrinho'}), 200
+
+
 @app.route('/carrinhoAdd', methods=['POST'])
 def carrinhoAdd():
     dados = request.get_json()
@@ -31,7 +37,7 @@ def carrinhoRemove():
     return jsonify({'status': 'ok', 'dados': dados}), 200
 
 
-@app.route('/carrinho', methods=['GET', 'POST'])
+@app.route('/carrinho')
 def carrinho():
     " mostra o carrinho "
     itens = session.get('carrinho', [])

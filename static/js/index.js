@@ -58,7 +58,7 @@ function mostrar_detalhes(event) {
         detalhes.innerHTML = `
         <span class="material-symbols-outlined fexar-detalhes">close</span>
         <div>
-            <img src="${img}" alt="calabresa">
+            <img class="detalhes-img" src="${img}" alt="${nome}">
             <div class="conteudo">
                 <div class="dados">
                     <h3>Pizza de <span class="nome-produto">${nome}</span></h3>
@@ -77,10 +77,10 @@ function mostrar_detalhes(event) {
         detalhes.innerHTML = `
         <span class="material-symbols-outlined fexar-detalhes">close</span>
         <div>
-            <img src="${img}" alt="calabresa">
+            <img class="detalhes-img" src="${img}" alt="${nome}">
             <div class="conteudo">
                 <div class="dados">
-                    <h3>Pizza de <span class="nome-produto">${nome}</span></h3>
+                    <h3><span class="nome-produto">${nome}</span></h3>
                     <p>R$ <span class="preco-produto">${preco}</span> un.</p>
                     <button class="adicionar-carrinho"><span class="material-symbols-outlined">shopping_cart</span></button>
                 </div>
@@ -119,7 +119,7 @@ function adicionarAoCarrinho(event) {
     const catalogo = document.getElementsByClassName('section')[0]
     const btn = event.target
     const div = btn.parentElement.parentElement.parentElement
-    const img = div.getElementsByTagName('img')[0].src
+    const img = div.getElementsByClassName('detalhes-img')[0].src
     const nome = div.getElementsByClassName('nome-produto')[0].innerText
     let preco = div.getElementsByClassName('preco-produto')[0].innerText
     preco = +preco

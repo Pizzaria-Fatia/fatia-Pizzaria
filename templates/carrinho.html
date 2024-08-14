@@ -33,10 +33,12 @@
             <div class="carrinho-container">
                 <img src="{{ item['img'] }}" alt="Img produto">
                 <div class="dados-produto">
-                    <h3>{{ item['nome'] }}</h3>
-                    <p>R$<span>{{ item['preco'] }}</span></p>
+                    <h3 class="nome-produto-carrinho">{{ item['nome'] }}</h3>
+                    <p class="preco-produto-carrinho">R$<span>{{ item['preco'] }}</span></p>
                     {% if item['borda'] %}
-                        <p>com borda de {{ item['borda'] }}</p>
+                        <p class="borda-produto-carrinho">com borda de {{ item['borda'] }}</p>
+                    {% else %}
+                        <p class="borda-produto-carrinho"> </p>
                     {% endif %}
                     <label for="qtd" class="qtd-itens">Quantidade: <input value="{{ item['quantidade'] }}" min="1" type="number" class="qtd" name="qtd" id="qtd"></label>
                 </div>
